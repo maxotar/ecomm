@@ -75,12 +75,12 @@ class UsersRepository {
     }
   }
 
-  randomID() {
-    return crypto.randomBytes(4).toString("hex");
-  }
-
   async deleteAll() {
     this.writeAll([]);
+  }
+
+  randomID() {
+    return crypto.randomBytes(4).toString("hex");
   }
 }
 
