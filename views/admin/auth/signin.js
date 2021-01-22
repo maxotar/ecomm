@@ -1,13 +1,17 @@
 const layout = require("../layout");
 
-module.exports = () => {
+const { getError } = require("../../helpers");
+
+module.exports = ({ errors }) => {
   return layout({
     title: "Sign In",
     content: `
       <div>
         <form method="POST">
           <input name="email" placeholder="email" />
+          ${getError(errors, "email")}
           <input name="password" placeholder="password" />
+          ${getError(errors, "password")}
           <button>Sign In</button>
         </form>
       </div>
